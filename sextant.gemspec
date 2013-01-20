@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["schneems"]
-  s.date = "2013-01-20"
+  s.date = "2013-01-21"
   s.description = "Sextant is a Rails engine that quickly shows the routes available"
   s.email = "richard.schneeman@gmail.com"
   s.extra_rdoc_files = [
@@ -27,13 +27,14 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/sextant/application.js",
     "app/assets/javascripts/sextant/sextant.js",
     "app/assets/stylesheets/sextant/application.css",
-    "app/assets/stylesheets/sextant/home.css.scss",
+    "app/assets/stylesheets/sextant/sextant.css.scss",
     "app/controllers/sextant/application_controller.rb",
     "app/controllers/sextant/routes_controller.rb",
     "app/views/layouts/sextant/application.html.erb",
     "app/views/sextant/routes/_route.html.erb",
     "app/views/sextant/routes/_route_wrapper.html.erb",
     "app/views/sextant/routes/index.html.erb",
+    "app/views/sextant/routes/index.js.erb",
     "config/routes.rb",
     "lib/rails/routes.rb",
     "lib/sextant.rb",

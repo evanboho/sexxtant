@@ -6,6 +6,9 @@ module Sextant
 
     def index
       @routes = Sextant.format_routes
+      if params[:term].present?
+        @routes = search_routes(@routes).uniq
+      end
     end
 
     private
@@ -17,6 +20,14 @@ module Sextant
 
     def local_request?
       Rails.application.config.consider_all_requests_local || request.local?
+    end
+
+    def search_routes(routes) 
+      routes = routes.select do |f| 
+        f[:name] =~ /#{params[:term]}*/ || 
+        f[:reqs] =~ /#{params[:term]}*/ ||
+        f[:verb] =~ /#{params[:term].upcase}*/
+      end
     end
 
   end

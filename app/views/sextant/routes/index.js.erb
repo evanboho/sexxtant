@@ -1,0 +1,5 @@
+var routeTable = document.getElementById('route_tbody');
+
+if (routeTable !== null) {
+  routeTable.innerHTML = "<% @routes.each do |route| %><%= j render partial: 'route', :locals => {:route => route} %><% end %>";
+}
