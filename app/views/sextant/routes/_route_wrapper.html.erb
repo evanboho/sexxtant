@@ -17,11 +17,15 @@
       <th>Controller#Action</th>
     </tr>
   </thead>
-  <tbody>
+
+  <tbody id="route_tbody">
+
     <%= yield %>
+
   </tbody>
 </table>
 
 <script type='text/javascript'>
   setupRouteToggleHelperLinks();
+  //setupSearchBar();
 </script>

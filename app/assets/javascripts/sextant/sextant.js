@@ -26,3 +26,38 @@ function setupRouteToggleHelperLinks() {
     setValOn(helperElems, helperTxt);
   });
 }
+
+function setupSearchBar() {
+  var searchBar = document.querySelectorAll('#search-field input');
+  keyUp(searchBar, function() {
+    var term = this.value;
+    //loadResults('/rails/routes.js', term, function(xhr) {
+    //  eval(xhr.responseText);
+    //})
+  });
+}
+
+function keyUp(elems, func) {
+  each(elems, function(elem) {
+    elem.onkeyup = func;
+  });
+}
+
+function loadResults(url, term, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = ensureReady;
+  function ensureReady() {
+    if(xhr.readyState < 4) {  
+      return;  
+    }  
+    if(xhr.status !== 200) {  
+      return;  
+    }  
+    if(xhr.readyState === 4) {  
+      callback(xhr);  
+    }  
+  }
+  xhr.open('GET', url + "?term=" + term, true);
+  xhr.send("");
+}
+

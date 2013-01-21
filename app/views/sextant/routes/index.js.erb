@@ -1,0 +1,5 @@
+var routeTable = document.getElementById('route_tbody');
+
+if (routeTable !== null) {
+  routeTable.innerHTML = "<%= j render partial: 'route', :collection => @routes %>";
+}
