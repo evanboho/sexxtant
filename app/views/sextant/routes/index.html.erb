@@ -1,11 +1,17 @@
 <h2>
   Routes
 </h2>
-
 <p>
   Routes match in priority from top to bottom
 </p>
 
-<%= render layout: "route_wrapper" do %>
+<div id="search-field">
+  <%= form_tag '/rails/routes' do %>
+    <%= search_field(nil, :term, :autofocus => true, :autocomplete => false) %>
+    <%= submit_tag "Submit" %>
+  <% end %>
+</div>
+
+<%= render layout: "route_wrapper" do  %>
   <%= render partial: "route", collection: @routes %>
 <% end %>
