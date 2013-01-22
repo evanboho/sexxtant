@@ -24,9 +24,9 @@ module Sextant
 
     def search_routes(routes) 
       routes = routes.select do |f| 
-        f[:name] =~ /#{params[:term]}*/ || 
-        f[:reqs] =~ /#{params[:term]}*/ ||
-        f[:verb] =~ /#{params[:term].upcase}*/
+        f[:name] =~ /#{params[:term]}/i || 
+        f[:reqs] =~ /#{params[:term]}/i ||
+        f[:verb] =~ /#{params[:term]}/i
       end
     end
 

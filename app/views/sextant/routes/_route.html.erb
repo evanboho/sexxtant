@@ -13,6 +13,6 @@
     <%= route[:path]%>
   </td>
   <td data-route-reqs='<%= route[:reqs] %>'>
-    <%= route[:reqs] %>
+    <%= route[:reqs].to(100) %>
   </td>
 </tr>
