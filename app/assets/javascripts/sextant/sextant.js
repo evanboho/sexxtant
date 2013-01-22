@@ -27,13 +27,13 @@ function setupRouteToggleHelperLinks() {
   });
 }
 
-function setupSearchBar() {
+function setupAjaxSearch() {
   var searchBar = document.querySelectorAll('#search-field input');
   keyUp(searchBar, function() {
     var term = this.value;
-    //loadResults('/rails/routes.js', term, function(xhr) {
-    //  eval(xhr.responseText);
-    //})
+    loadResults('/rails/routes.js', term, function(xhr) {
+      eval(xhr.responseText);
+    })
   });
 }
 

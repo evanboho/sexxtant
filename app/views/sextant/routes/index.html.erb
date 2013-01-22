@@ -11,6 +11,12 @@
     <%= submit_tag "Submit" %>
   <% end %>
 </div>
+<div id="search-term">
+  <% if params[:term].present? %>
+    showing results for: <strong><%= params[:term] %></strong><br>
+    <%= link_to "See all", "/rails/routes" %>
+  <% end %>
+</div>
 
 <%= render layout: "route_wrapper" do  %>
   <%= render partial: "route", collection: @routes %>

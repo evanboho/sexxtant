@@ -25,6 +25,12 @@ a:hover { color: #fff; background-color:#000; }
   input { font-size: 30px; }
 }
 
+#search-term {
+  min-height: 20px;
+  text-align: center;
+
+}
+
 .hidden {
   display: none;
 }
